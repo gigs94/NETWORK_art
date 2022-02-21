@@ -3,8 +3,8 @@ from PIL import Image
 import numpy as np
 import random
 import string
-height = 1080
-width = 1920
+height = 540
+width = 960
 zoom = 2
 
 tmp = []
@@ -13,10 +13,11 @@ for y in range(int(-height/2),int(height/2)):
     for x in range(int(-width/2),int(width/2)):
         tmpx.append([x/width*zoom,y/height*zoom*height/width])
     tmp.append(tmpx)
+print(np.shape(tmp))
 del tmpx
 pixels = []
 input_dim = height,width
-size = 2,12,12,12,12,12,3
+size = 2,50,50,3
 NET.set_inputDim(input_dim)
 NET.setSize(size)
 NET.gen_biases()
